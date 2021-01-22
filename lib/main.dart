@@ -1,4 +1,7 @@
+// Packages
 import 'package:flutter/material.dart';
+// Own files
+import './question.dart';
 
 void main() => runApp(PersonalityQuizApp());
 
@@ -32,7 +35,7 @@ class _PersonalityQuizAppState extends State<PersonalityQuizApp> {
         ),
         body: Column(
           children: [
-            Text(questions[_questionIndex]),
+            Question(questions[_questionIndex]),
             ElevatedButton(child: Text("Answer 1"), onPressed: _answerQuestion),
             ElevatedButton(child: Text("Answer 2"), onPressed: _answerQuestion),
             ElevatedButton(child: Text("Answer 3"), onPressed: _answerQuestion)
