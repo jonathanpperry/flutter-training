@@ -5,16 +5,16 @@ void main() => runApp(PersonalityQuizApp());
 class PersonalityQuizApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PersonalityQuizAppState();
+    return _PersonalityQuizAppState();
   }
 }
 
-class PersonalityQuizAppState extends State<PersonalityQuizApp> {
-  var questionIndex = 0;
+class _PersonalityQuizAppState extends State<PersonalityQuizApp> {
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
   }
 
@@ -27,15 +27,15 @@ class PersonalityQuizAppState extends State<PersonalityQuizApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("My First App"),
+          title: Text("Personality Quiz!"),
           centerTitle: true,
         ),
         body: Column(
           children: [
-            Text(questions[questionIndex]),
-            ElevatedButton(child: Text("Answer 1"), onPressed: answerQuestion),
-            ElevatedButton(child: Text("Answer 2"), onPressed: answerQuestion),
-            ElevatedButton(child: Text("Answer 3"), onPressed: answerQuestion)
+            Text(questions[_questionIndex]),
+            ElevatedButton(child: Text("Answer 1"), onPressed: _answerQuestion),
+            ElevatedButton(child: Text("Answer 2"), onPressed: _answerQuestion),
+            ElevatedButton(child: Text("Answer 3"), onPressed: _answerQuestion)
           ],
         ),
       ),
